@@ -1,0 +1,94 @@
+sudo apt update && sudo apt install -y gdb curl lib32gcc-s1 libc++-dev unzip
+sudo useradd -m steam
+
+sudo su -l steam
+
+--Logged into user steam-------
+
+mkdir ~/Steam && cd ~/Steam && curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf -
+
+To host PC Server (non-beta):
+
+~/Steam/steamcmd.sh +force_install_dir /home/steam/pavlovserver +login anonymous +app_update 622970 +exit
+
+To host PC BETA:
+
+~/Steam/steamcmd.sh +force_install_dir /home/steam/pavlovserver +login anonymous +app_update 622970 -beta beta_server +exit
+
+To host Shack Live (Quest):
+
+~/Steam/steamcmd.sh +force_install_dir /home/steam/pavlovserver +login anonymous +app_update 622970 -beta shack +exit
+
+To host Shack RC (Quest):
+~/Steam/steamcmd.sh +force_install_dir /home/steam/pavlovserver +login anonymous +app_update 622970 -beta shack_beta +exit
+
+~/Steam/steamcmd.sh +login anonymous +app_update 1007 +quit
+mkdir -p ~/.steam/sdk64
+cp ~/Steam/steamapps/common/Steamworks\ SDK\ Redist/linux64/steamclient.so ~/.steam/sdk64/steamclient.so
+cp ~/Steam/steamapps/common/Steamworks\ SDK\ Redist/linux64/steamclient.so ~/pavlovserver/Pavlov/Binaries/Linux/steamclient.so
+
+chmod +x ~/pavlovserver/PavlovServer.sh
+
+mkdir -p /home/steam/pavlovserver/Pavlov/Saved/Logs
+mkdir -p /home/steam/pavlovserver/Pavlov/Saved/Config/LinuxServer
+mkdir -p /home/steam/pavlovserver/Pavlov/Saved/maps
+
+touch /home/steam/pavlovserver/Pavlov/Saved/Config/mods.txt
+touch /home/steam/pavlovserver/Pavlov/Saved/Config/blacklist.txt
+touch /home/steam/pavlovserver/Pavlov/Saved/Config/whitelist.txt
+
+nano /home/steam/pavlovserver/Pavlov/Saved/Config/LinuxServer/Game.ini
+
+
+--Logged Out of steam--------
+sudo ufw status
+sudo ufw allow 7777
+sudo ufw allow 8177
+sudo ufw allow 9100
+sudo ufw status
+
+--Logged into steam----------
+
+nano /home/steam/pavlovserver/Pavlov/Saved/Config/RconSettings.txt
+
+--Logged Out of steam--------
+
+cat << 'EOF' > $HOME/pavlov_daily_update_and_restart.sh
+#!/bin/bash
+
+USER="steam"
+SERVICENAME="pavlovserver.service"
+INSTALLDIRNAME="pavlovserver"
+USERHOME="/home/$USER"
+
+echo -e "Beginning Pavlov VR update run on $(date)\n\n"
+
+systemctl stop "$SERVICENAME"
+
+sleep 5
+sudo -iu "$USER" "$USERHOME/Steam/steamcmd.sh" +login anonymous +force_install_dir "$USERHOME/$INSTALLDIRNAME" +app_update 622970 +exit
+sudo -iu "$USER" "$USERHOME/Steam/steamcmd.sh" +login anonymous +app_update 1007 +quit
+sudo -iu "$USER" cp "$USERHOME/Steam/steamapps/common/Steamworks SDK Redist/linux64/steamclient.so" "$USERHOME/.steam/sdk64/steamclient.so"
+sudo -iu "$USER" cp "$USERHOME/Steam/steamapps/common/Steamworks SDK Redist/linux64/steamclient.so" "$USERHOME/pavlovserver/Pavlov/Binaries/Linux/steamclient.so"
+
+systemctl start "$SERVICENAME"
+
+echo -e "Ending Pavlov VR update run on $(date)\n\n"
+
+EOF
+
+chmod +x $HOME/pavlov_daily_update_and_restart.sh
+mkdir $HOME/pavlov_update_logs && touch $HOME/pavlov_update_logs/pavlov_daily_update_and_restart.sh.log
+CRONLINE="00 2 * * * $HOME/pavlov_daily_update_and_restart.sh >>$HOME/pavlov_update_logs/pavlov_daily_update_and_restart.sh.log 2>&1"
+(sudo crontab -u root -l; echo "$CRONLINE" ) | sudo crontab -u root -
+unset CRONLINE
+
+
+sudo nano /etc/systemd/system/pavlovserver.service
+
+
+--Basic commands------
+sudo systemctl start pavlovserver
+sudo systemctl restart pavlovserver
+sudo systemctl stop pavlovserver
+sudo systemctl status pavlovserver
