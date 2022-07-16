@@ -1,4 +1,5 @@
 # Pavlov_server_hosting
 
-
-1. follow the crude document and follow the directions because if you do its not that hard
+1. buy a server from here https://us.ovhcloud.com/vps/uc-vps-sandbox/
+2. Download Mobaxterm https://mobaxterm.mobatek.net/download.html
+3. Follow the crude document and the directions.
