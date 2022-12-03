@@ -46,12 +46,14 @@ nano /home/steam/pavlovserver/Pavlov/Saved/Config/LinuxServer/Game.ini
 > See https://github.com/Josephfallen/Pavlov_server_hosting/blob/main/Game.ini.txt for the file's contents
 
 ## Logged Out of steam
+```
 sudo ufw status
 sudo ufw allow 7777
 sudo ufw allow 8177
 sudo ufw allow 9100
 sudo ufw status
 
+```
 ## Logged into steam
 
 nano /home/steam/pavlovserver/Pavlov/Saved/Config/RconSettings.txt
