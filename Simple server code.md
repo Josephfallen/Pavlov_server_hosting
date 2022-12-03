@@ -8,21 +8,22 @@ sudo su -l steam
 
 mkdir ~/Steam && cd ~/Steam && curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf -
 
-To host PC Server (non-beta):
+###### To host PC Server (non-beta):
 
 ~/Steam/steamcmd.sh +force_install_dir /home/steam/pavlovserver +login anonymous +app_update 622970 +exit
 
-To host PC BETA:
+###### To host PC BETA:
 
 ~/Steam/steamcmd.sh +force_install_dir /home/steam/pavlovserver +login anonymous +app_update 622970 -beta beta_server +exit
 
-To host Shack Live (Quest):
+###### To host Shack Live (Quest):
 
 ~/Steam/steamcmd.sh +force_install_dir /home/steam/pavlovserver +login anonymous +app_update 622970 -beta shack +exit
 
-To host Shack RC (Quest):
+###### To host Shack RC (Quest):
 ~/Steam/steamcmd.sh +force_install_dir /home/steam/pavlovserver +login anonymous +app_update 622970 -beta shack_beta +exit
 
+## Once you complete the above process continue with this
 ~/Steam/steamcmd.sh +login anonymous +app_update 1007 +quit
 mkdir -p ~/.steam/sdk64
 cp ~/Steam/steamapps/common/Steamworks\ SDK\ Redist/linux64/steamclient.so ~/.steam/sdk64/steamclient.so
