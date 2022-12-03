@@ -1,3 +1,4 @@
+###### Note: Text in block format means that you run them together
 ## When you first launch the pannel
 sudo apt update && sudo apt install -y gdb curl lib32gcc-s1 libc++-dev unzip
 sudo useradd -m steam
