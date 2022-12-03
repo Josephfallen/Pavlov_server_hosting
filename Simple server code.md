@@ -43,7 +43,7 @@ touch /home/steam/pavlovserver/Pavlov/Saved/Config/whitelist.txt
 
 
 nano /home/steam/pavlovserver/Pavlov/Saved/Config/LinuxServer/Game.ini
-###### See https://github.com/Josephfallen/Pavlov_server_hosting/blob/main/Game.ini.txt for the file's contents
+------>###### See https://github.com/Josephfallen/Pavlov_server_hosting/blob/main/Game.ini.txt for the file's contents
 
 ## Logged Out of steam
 sudo ufw status
