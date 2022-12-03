@@ -65,7 +65,7 @@ nano /home/steam/pavlovserver/Pavlov/Saved/Config/RconSettings.txt
 ```
 sudo nano /etc/systemd/system/pavlovserver.service
 ```
-> https://github.com/Josephfallen/Pavlov_server_hosting/blob/main/RconSettings.txt
+> See https://github.com/Josephfallen/Pavlov_server_hosting/blob/main/RconSettings.txt for file's contents
 ## Basic commands
 ```
 sudo systemctl start pavlovserver
