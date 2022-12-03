@@ -55,10 +55,12 @@ nano /home/steam/pavlovserver/Pavlov/Saved/Config/RconSettings.txt
 
 
 sudo nano /etc/systemd/system/pavlovserver.service
-
-
---Basic commands------
+## Basic commands
+ 
 sudo systemctl start pavlovserver
+
 sudo systemctl restart pavlovserver
+
 sudo systemctl stop pavlovserver
+
 sudo systemctl status pavlovserver
