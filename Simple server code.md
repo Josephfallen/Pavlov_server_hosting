@@ -40,19 +40,18 @@ touch /home/steam/pavlovserver/Pavlov/Saved/Config/whitelist.txt
 
 nano /home/steam/pavlovserver/Pavlov/Saved/Config/LinuxServer/Game.ini
 
-
---Logged Out of steam--------
+## Logged Out of steam
 sudo ufw status
 sudo ufw allow 7777
 sudo ufw allow 8177
 sudo ufw allow 9100
 sudo ufw status
 
---Logged into steam----------
+## Logged into steam
 
 nano /home/steam/pavlovserver/Pavlov/Saved/Config/RconSettings.txt
 
---Logged Out of steam--------
+## Logged Out of steam
 
 
 sudo nano /etc/systemd/system/pavlovserver.service
