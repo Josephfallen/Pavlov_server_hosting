@@ -7,9 +7,9 @@ sudo useradd -m steam
 sudo su -l steam
 ```
 ## Logged into user steam
-
+```
 mkdir ~/Steam && cd ~/Steam && curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf -
-
+```
 ###### To host PC Server (non-beta):
 ```
 ~/Steam/steamcmd.sh +force_install_dir /home/steam/pavlovserver +login anonymous +app_update 622970 +exit
