@@ -79,4 +79,6 @@ sudo systemctl restart pavlovserver
 sudo systemctl stop pavlovserver
 
 sudo systemctl status pavlovserver
+
+journalctl -n 20 -f -u pavlovserver
 ```
