@@ -58,7 +58,6 @@ sudo ufw allow 7777
 sudo ufw allow 8177
 sudo ufw allow 9100
 sudo ufw status
-
 ```
 ## Logged into steam
 ```
