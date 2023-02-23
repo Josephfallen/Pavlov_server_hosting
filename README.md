@@ -1,7 +1,7 @@
 ###### Download mobaxtrerm for the best results
 ### This is for Ubuntu 22.04 
 ###### Note: Text in block format means that you run them together
-## When you first launch the pannel
+###### Purchase a server here: https://us.ovhcloud.com/vps/uc-vps-sandbox/## When you first launch the pannel
 ```
 sudo apt update && sudo apt install -y gdb curl lib32gcc-s1 libc++-dev unzip
 sudo useradd -m steam
