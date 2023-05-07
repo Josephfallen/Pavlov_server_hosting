@@ -1,6 +1,7 @@
 ###### Download mobaxterm for the best results
 ### This is for Ubuntu 22.04 
 ###### Note: Text in block format means that you run them together
+##### API Key retriver: https://pavlov-ms.vankrupt.com/servers/v1/key
 
 ```
 sudo apt update && sudo apt install -y gdb curl lib32gcc-s1 libc++-dev unzip
