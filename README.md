@@ -1,9 +1,7 @@
 ###### Download mobaxterm for the best results
 ### This is for Ubuntu 22.04 
 ###### Note: Text in block format means that you run them together
-###### Purchase a server here: https://us.ovhcloud.com/vps/uc-vps-sandbox/
-#### API Key retriver: https://pavlov-ms.vankrupt.com/servers/v1/key
-When you first launch mobaxterm
+
 ```
 sudo apt update && sudo apt install -y gdb curl lib32gcc-s1 libc++-dev unzip
 sudo useradd -m steam
@@ -51,7 +49,7 @@ touch /home/steam/pavlovserver/Pavlov/Saved/Config/whitelist.txt
 
 nano /home/steam/pavlovserver/Pavlov/Saved/Config/LinuxServer/Game.ini
 ```
-> See https://github.com/Josephfallen/Pavlov_server_hosting/blob/main/Game.ini.txt for the file's contents
+> See https://github.com/Josephfallen/Pavlov_server_hosting/blob/main/Game.ini for the file's contents
 
 ## Logged Out of steam
 ```
