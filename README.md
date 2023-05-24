@@ -11,7 +11,7 @@ sudo su -l steam
 ```
 ## After Creation
 ```
-sudo chsh -s /bin/bash {USER}
+sudo chsh -s /bin/bash steam
 ```
 ## Logged into user steam
 ```
