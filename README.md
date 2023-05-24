@@ -9,6 +9,10 @@ sudo useradd -m steam
 
 sudo su -l steam
 ```
+## After Creation
+```
+sudo chsh -s /bin/bash {USER}
+```
 ## Logged into user steam
 ```
 mkdir ~/Steam && cd ~/Steam && curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf -
