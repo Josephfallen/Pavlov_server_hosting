@@ -9,7 +9,7 @@ sudo useradd -m steam
 
 sudo su -l steam
 ```
-## After Creation
+## After Creating to steam user
 ```
 sudo chsh -s /bin/bash steam
 ```
