@@ -39,6 +39,13 @@ mkdir ~/Steam && cd ~/Steam && curl -sqL "https://steamcdn-a.akamaihd.net/client
 mkdir -p ~/.steam/sdk64
 cp ~/Steam/steamapps/common/Steamworks\ SDK\ Redist/linux64/steamclient.so ~/.steam/sdk64/steamclient.so
 cp ~/Steam/steamapps/common/Steamworks\ SDK\ Redist/linux64/steamclient.so ~/pavlovserver/Pavlov/Binaries/Linux/steamclient.so
+```
+
+### New with update 29 
+```
+sudo rm /usr/lib/x86_64-linux-gnu/libc++.so 
+sudo ln -s /usr/lib/x86_64-linux-gnu/libc++.so.1 /usr/lib/x86_64-linux-gnu/libc++.so
+``
 
 chmod +x ~/pavlovserver/PavlovServer.sh
 
