@@ -45,8 +45,9 @@ cp ~/Steam/steamapps/common/Steamworks\ SDK\ Redist/linux64/steamclient.so ~/pav
 ```
 sudo rm /usr/lib/x86_64-linux-gnu/libc++.so 
 sudo ln -s /usr/lib/x86_64-linux-gnu/libc++.so.1 /usr/lib/x86_64-linux-gnu/libc++.so
-``
+```
 
+```
 chmod +x ~/pavlovserver/PavlovServer.sh
 
 mkdir -p /home/steam/pavlovserver/Pavlov/Saved/Logs
